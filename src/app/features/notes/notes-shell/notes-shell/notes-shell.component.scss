@@ -1,0 +1,75 @@
+:host{
+  display: block;
+
+  .shell-container{
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f0f0f0;
+  }
+
+  .sidebar{
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #dee2e6;
+    background-color: #fff;
+
+    .sidebar-header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 10px 5px 10px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    flex-shrink: 0;
+    height: 65px;
+    background: white;
+
+    h2{
+      margin: 0;
+      font-size: 1.5rem;
+    }
+  }
+
+  .new-note-btn{
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007aff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .main-content{
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 70px 70px 50px 70px;
+
+    .main-content-header{
+      background: white;
+    }
+
+    .editor-area{
+
+      flex: 1;
+      background-color: #f0f0f0;
+    }
+  }
+}

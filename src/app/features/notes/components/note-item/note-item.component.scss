@@ -1,0 +1,79 @@
+$primary-text: #212529;
+$secondary-text: #6c757d;
+$active-bg: #e0f3ff;
+$active-border: #007aff;
+$hover-bg: #8f89fa;
+$border-color: #dee2e6;
+$delete-button-color: #dc3545;
+
+:host{
+  display: block;
+
+  .note-item-container{
+    position: relative;
+    padding: 1rem;
+    border-bottom: 1px solid $border-color;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $hover-bg;
+
+      .delete-button{
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    &.active{
+      background-color: $active-bg;
+      border-left: 3px solid $active-border;
+    }
+  }
+
+  .note-title {
+    margin: 0 0 0 .25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $primary-text;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 2rem;
+  }
+
+  .note-preview{
+    margin: 0;
+    font-size: 0.9rem;
+    color: $secondary-text;
+    line-height: 1.4;
+  }
+
+  .delete-button{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 10;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    color: #aaa;
+    font-size: 1.25rem;
+    line-height: 1rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out, background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      color: white;
+      background-color: $delete-button-color;
+      pointer-events: auto;
+    }
+  }
+}

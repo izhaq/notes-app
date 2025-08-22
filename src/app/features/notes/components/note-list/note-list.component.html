@@ -1,0 +1,15 @@
+<div class="note-list-container">
+  @for (note of notes(); track note.id) {
+    <app-note-item
+      [note]="note"
+      [isActive]="note.id === activeNodeId()"
+      (selected)="noteSelected.emit($event)"
+      (deleted)="noteDeleted.emit($event)"
+    />
+  } @empty {
+    <div class="empty-state">
+      <p>No notes found.</p>
+      <span>Create a new tp get started</span>
+    </div>
+  }
+</div>

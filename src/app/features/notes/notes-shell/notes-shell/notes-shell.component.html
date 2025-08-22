@@ -1,0 +1,25 @@
+<div class="shell-container">
+  <aside class="sidebar">
+    <header class="sidebar-header">
+      <app-search-bar (searchChange)="onSearchChanged($event)"></app-search-bar>
+      <button class="new-note-btn" (click)="onCreateNote()">+</button>
+    </header>
+
+    <app-note-list
+      [notes]="notesService.filteredNotes()"
+      [activeNodeId]="notesService.activeNoteId()"
+      (noteSelected)="onNoteSelected($event)"
+      (noteDeleted)="onNoteDelete($event)"
+    ></app-note-list>
+  </aside>
+
+  <main class="main-content">
+    <div class="editor-area">
+      <app-note-editor
+        [note]="notesService.activeNote()"
+        (noteUpdated)="onNoteUpdated($event)"
+      >
+      </app-note-editor>
+    </div>
+  </main>
+</div>

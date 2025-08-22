@@ -1,0 +1,26 @@
+<div class="editor-wrapper">
+  @if (note(); as displayNote) {
+    <form class="editor-container" [formGroup]="noteForm">
+      <input
+        class="editor-title"
+        placeholder="Note Title"
+        formControlName="title"
+      />
+      <textarea
+        class="editor-content"
+        placeholder="Start writing"
+        formControlName="content"
+      ></textarea>
+      <div class="confirm-update-container">
+        <button class="confirm-update-note-btn"
+                [class.disable]="disableUpdate()"
+                (click)="onSaveNote()"
+                [disabled]="disableUpdate()">✓</button>
+      </div>
+    </form>
+  } @else{
+    <div class="empty-state">
+      <p>Select a note from the list to view or edit</p>
+    </div>
+  }
+</div>

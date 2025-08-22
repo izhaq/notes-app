@@ -1,0 +1,5 @@
+<div class="note-item-container" [class.active]="isActive()" (click)="selected.emit(note().id)">
+  <h3 class="note-title">{{ note().title }}</h3>
+  <p class="note-preview">{{contentPreview()}}</p>
+  <button class="delete-button" (click)="onDelete($event)" title="Delete note">&times;</button>
+</div>
