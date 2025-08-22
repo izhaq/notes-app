@@ -1,5 +1,4 @@
 import {Note, NoteId, NotePayload} from '../models/note.model';
-import {delay, Observable, of, tap} from 'rxjs';
 
 const OneDay = 24 * 60 * 60 * 1000;
 const now = Date.now();

@@ -1,18 +1,14 @@
 import {
   ChangeDetectionStrategy,
   Component, computed,
-  DestroyRef,
   effect,
-  inject,
   input,
-  OnInit,
   output,
-  signal
 } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {Note, NotePayload} from '../../../../core/models/note.model';
 import {debounceTime, distinctUntilChanged} from 'rxjs';
-import {takeUntilDestroyed, toSignal} from '@angular/core/rxjs-interop';
+import {toSignal} from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-note-editor',

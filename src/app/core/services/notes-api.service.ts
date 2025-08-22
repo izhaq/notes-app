@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Note, NoteId, NotePayload} from '../models/note.model';
-import {createNote, deleteNote, fetchNodesFromDB, MOCK_NOTES, updateNote} from '../data/mock-notes';
-import {delay, never, Observable, of, tap} from 'rxjs';
+import {createNote, deleteNote, fetchNodesFromDB, updateNote} from '../data/mock-notes';
+import {delay, Observable, of, tap} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
