@@ -1,9 +1,12 @@
 import {ChangeDetectionStrategy, Component, computed, input, output} from '@angular/core';
 import {Note} from '../../../../core/models/note.model';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-note-item',
-  imports: [],
+  imports: [
+    DatePipe
+  ],
   templateUrl: './note-item.component.html',
   styleUrl: './note-item.component.scss',
   standalone: true,
